@@ -1,15 +1,13 @@
 function descreaseCounter () {
-    if (isGameOver == 0) {
-        if (isPlayer1 == 1) {
-            if (player1_score > 0) {
-                player1_score += -1
-                basic.showNumber(player1_score)
-            }
-        } else {
-            if (player2_score > 0) {
-                player2_score += -1
-                basic.showNumber(player2_score)
-            }
+    if (isPlayer1 == 1) {
+        if (player1_score > 0) {
+            player1_score += -1
+            basic.showNumber(player1_score)
+        }
+    } else {
+        if (player2_score > 0) {
+            player2_score += -1
+            basic.showNumber(player2_score)
         }
     }
 }
@@ -24,16 +22,14 @@ function checkWinner (score: number, msg: string) {
     }
 }
 function increaseCounter () {
-    if (0 == 0) {
-        if (isPlayer1 == 1) {
-            player1_score += 1
-            checkWinner(player1_score, " P1 Won")
-            basic.showNumber(player1_score)
-        } else {
-            player2_score += 1
-            checkWinner(player2_score, " P2 Won")
-            basic.showNumber(player2_score)
-        }
+    if (isPlayer1 == 1) {
+        player1_score += 1
+        checkWinner(player1_score, " P1 Won")
+        basic.showNumber(player1_score)
+    } else {
+        player2_score += 1
+        checkWinner(player2_score, " P2 Won")
+        basic.showNumber(player2_score)
     }
 }
 input.onButtonPressed(Button.A, function () {
@@ -64,10 +60,10 @@ input.onButtonPressed(Button.B, function () {
     }
     showPlayer()
 })
+let isGameOver = 0
 let player2_score = 0
 let player1_score = 0
 let isPlayer1 = 0
-let isGameOver = 0
 init()
 images.iconImage(IconNames.Happy).scrollImage(1, 200)
 music.setVolume(50)
