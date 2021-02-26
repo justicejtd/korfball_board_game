@@ -14,7 +14,7 @@ function descreaseCounter () {
 function checkWinner (score: number, msg: string) {
     if (score == 9) {
         isGameOver = 1
-        images.iconImage(IconNames.Chessboard).scrollImage(1, 300)
+        images.iconImage(IconNames.Yes).scrollImage(1, 300)
         music.playMelody("G A B C5 G A B C5 ", 120)
         basic.showString(msg)
         init()
